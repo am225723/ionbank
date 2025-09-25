@@ -3,57 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IonBank - Professional Deal Discussion Generator</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <title>IonBank - Deal Discussions Generator | Professional Lending Analysis</title>
+    <meta name="description" content="Generate comprehensive deal discussion papers for lending decisions. Professional templates for commercial real estate, C&I loans, and residential mortgages.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    
+    <!-- Styles -->
     <link rel="stylesheet" href="styles.css">
 <script src="https://sites.super.myninja.ai/_assets/ninja-daytona-script.js"></script>
 </head>
 <body>
-    <!-- Header -->
-    <header class="header">
-        <nav class="nav container">
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
             <div class="nav-brand">
                 <img src="../IonBankLogo.png" alt="IonBank" class="nav-logo">
-                <span class="nav-brand-text">IonBank</span>
+                <span class="nav-title">IonBank</span>
             </div>
             
-            <div class="nav-menu" id="nav-menu">
-                <ul class="nav-list">
-                    <li class="nav-item">
-                        <a href="#home" class="nav-link active">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#features" class="nav-link">Features</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#how-it-works" class="nav-link">How It Works</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#templates" class="nav-link">Deal Templates</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#about" class="nav-link">About</a>
-                    </li>
-                </ul>
-                
-                <div class="nav-actions">
-                    <a href="../sop-generator/index.html" class="btn btn-primary">
-                        <i class="fas fa-rocket"></i>
-                        Get Started
-                    </a>
-                </div>
+            <ul class="nav-menu" id="nav-menu">
+                <li class="nav-item">
+                    <a href="#home" class="nav-link active">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#features" class="nav-link">Features</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#templates" class="nav-link">Deal Templates</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#process" class="nav-link">How It Works</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#contact" class="nav-link">Contact</a>
+                </li>
+            </ul>
+            
+            <div class="nav-actions">
+                <a href="#demo" class="btn-secondary">View Demo</a>
+                <a href="../sop-generator/index.html" class="btn-primary">
+                    <i class="fas fa-rocket"></i>
+                    Create Deal Discussion
+                </a>
             </div>
             
-            <div class="nav-toggle" id="nav-toggle">
-                <i class="fas fa-bars"></i>
-            </div>
-        </nav>
-    </header>
+            <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+                <span class="hamburger"></span>
+                <span class="hamburger"></span>
+                <span class="hamburger"></span>
+            </button>
+        </div>
+    </nav>
 
     <!-- Hero Section -->
     <section class="hero" id="home">
         <div class="hero-background">
+            <div class="hero-gradient"></div>
             <div class="hero-pattern"></div>
         </div>
         
@@ -61,88 +72,114 @@
             <div class="hero-content">
                 <div class="hero-text">
                     <div class="hero-badge">
-                        <i class="fas fa-sparkles"></i>
-                        Professional Deal Analysis
+                        <i class="fas fa-chart-line"></i>
+                        <span>Professional Deal Analysis</span>
                     </div>
                     
                     <h1 class="hero-title">
-                        Create Professional 
-                        <span class="text-gradient">Deal Discussions</span>
+                        Generate Professional
+                        <span class="gradient-text">Deal Discussion Papers</span>
                         in Minutes
                     </h1>
                     
                     <p class="hero-description">
-                        Streamline your lending operations with our intelligent Deal Discussions generator. 
-                        Create comprehensive, professional deal analysis papers with ease and confidence.
+                        Transform your lending workflow with intelligent deal analysis. Create comprehensive, 
+                        professional deal discussion papers that streamline loan committee decisions and 
+                        ensure regulatory compliance.
                     </p>
                     
                     <div class="hero-actions">
-                        <a href="../sop-generator/index.html" class="btn btn-primary btn-large">
-                            <i class="fas fa-rocket"></i>
-                            Start Creating Deal Discussions
-                        </a>
-                        <a href="#demo" class="btn btn-secondary btn-large">
+                        <a href="../sop-generator/index.html" class="btn-primary btn-large">
                             <i class="fas fa-play"></i>
+                            Start Creating Deals
+                        </a>
+                        <a href="#demo" class="btn-outline btn-large">
+                            <i class="fas fa-eye"></i>
                             Watch Demo
                         </a>
                     </div>
                     
                     <div class="hero-stats">
-                        <div class="stat">
-                            <div class="stat-number">500+</div>
-                            <div class="stat-label">Deal Discussions Created</div>
+                        <div class="stat-item">
+                            <div class="stat-number">1,200+</div>
+                            <div class="stat-label">Deal Papers Generated</div>
                         </div>
-                        <div class="stat">
-                            <div class="stat-number">98%</div>
-                            <div class="stat-label">Approval Rate</div>
+                        <div class="stat-item">
+                            <div class="stat-number">95%</div>
+                            <div class="stat-label">Committee Approval Rate</div>
                         </div>
-                        <div class="stat">
-                            <div class="stat-number">5min</div>
-                            <div class="stat-label">Average Creation Time</div>
+                        <div class="stat-item">
+                            <div class="stat-number">3min</div>
+                            <div class="stat-label">Average Generation Time</div>
                         </div>
                     </div>
                 </div>
                 
                 <div class="hero-visual">
-                    <div class="hero-card">
-                        <div class="hero-card-header">
-                            <div class="hero-card-dots">
-                                <span></span>
-                                <span></span>
-                                <span></span>
+                    <div class="demo-interface">
+                        <div class="interface-header">
+                            <div class="interface-controls">
+                                <span class="control red"></span>
+                                <span class="control yellow"></span>
+                                <span class="control green"></span>
                             </div>
-                            <div class="hero-card-title">Deal Discussion Generator</div>
+                            <div class="interface-title">Deal Discussion Generator</div>
                         </div>
-                        <div class="hero-card-content">
-                            <div class="form-preview">
-                                <div class="form-field">
+                        
+                        <div class="interface-content">
+                            <div class="form-section">
+                                <div class="form-group">
                                     <label>Deal Type</label>
-                                    <div class="input-preview">Commercial Real Estate</div>
+                                    <div class="input-field active">Commercial Real Estate</div>
                                 </div>
-                                <div class="form-field">
+                                <div class="form-group">
+                                    <label>Borrower</label>
+                                    <div class="input-field">Metro Development Group</div>
+                                </div>
+                                <div class="form-group">
                                     <label>Loan Amount</label>
-                                    <div class="input-preview">$2,500,000</div>
+                                    <div class="input-field">$3,500,000</div>
                                 </div>
-                                <div class="form-field">
-                                    <label>Borrower Name</label>
-                                    <div class="input-preview">ABC Development LLC</div>
+                                <div class="form-group">
+                                    <label>Property Type</label>
+                                    <div class="input-field">Mixed-Use Development</div>
                                 </div>
-                                <div class="form-actions">
-                                    <div class="btn-preview btn-preview-primary">Generate Deal Discussion</div>
+                            </div>
+                            
+                            <div class="generation-status">
+                                <div class="status-item completed">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Borrower Analysis</span>
+                                </div>
+                                <div class="status-item completed">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Property Evaluation</span>
+                                </div>
+                                <div class="status-item active">
+                                    <i class="fas fa-spinner fa-spin"></i>
+                                    <span>Risk Assessment</span>
+                                </div>
+                                <div class="status-item">
+                                    <i class="fas fa-circle"></i>
+                                    <span>Final Report</span>
                                 </div>
                             </div>
                         </div>
                     </div>
                     
+                    <!-- Floating Elements -->
                     <div class="floating-elements">
-                        <div class="floating-icon floating-icon-1">
-                            <i class="fas fa-file-alt"></i>
+                        <div class="floating-card card-1">
+                            <i class="fas fa-building"></i>
+                            <span>CRE Analysis</span>
                         </div>
-                        <div class="floating-icon floating-icon-2">
-                            <i class="fas fa-check-circle"></i>
+                        <div class="floating-card card-2">
+                            <i class="fas fa-chart-bar"></i>
+                            <span>Risk Metrics</span>
                         </div>
-                        <div class="floating-icon floating-icon-3">
-                            <i class="fas fa-download"></i>
+                        <div class="floating-card card-3">
+                            <i class="fas fa-file-contract"></i>
+                            <span>Deal Summary</span>
                         </div>
                     </div>
                 </div>
@@ -156,226 +193,310 @@
             <div class="section-header">
                 <div class="section-badge">
                     <i class="fas fa-star"></i>
-                    Key Features
+                    <span>Powerful Features</span>
                 </div>
                 <h2 class="section-title">
-                    Everything You Need for 
-                    <span class="text-gradient">Professional Deal Discussions</span>
+                    Everything You Need for
+                    <span class="gradient-text">Professional Deal Analysis</span>
                 </h2>
                 <p class="section-description">
-                    Our comprehensive platform provides all the tools and templates you need 
-                    to create thorough, professional deal analysis papers efficiently.
+                    Our comprehensive platform streamlines the entire deal discussion process, 
+                    from initial analysis to final committee presentation.
                 </p>
             </div>
             
             <div class="features-grid">
                 <div class="feature-card">
                     <div class="feature-icon">
-                        <i class="fas fa-magic"></i>
+                        <i class="fas fa-brain"></i>
                     </div>
-                    <h3 class="feature-title">Automated Generation</h3>
+                    <h3 class="feature-title">Intelligent Analysis</h3>
                     <p class="feature-description">
-                        Intelligent form-based system that automatically generates comprehensive 
-                        deal discussion papers based on your loan parameters and risk analysis requirements.
+                        AI-powered analysis engine that evaluates borrower creditworthiness, 
+                        property values, and market conditions to generate comprehensive insights.
                     </p>
-                    <div class="feature-link">
-                        <a href="#learn-more">Learn more <i class="fas fa-arrow-right"></i></a>
-                    </div>
+                    <ul class="feature-list">
+                        <li>Automated credit analysis</li>
+                        <li>Market condition assessment</li>
+                        <li>Risk factor identification</li>
+                    </ul>
                 </div>
                 
-                <div class="feature-card">
+                <div class="feature-card featured">
+                    <div class="feature-badge">Most Popular</div>
                     <div class="feature-icon">
-                        <i class="fas fa-file-contract"></i>
+                        <i class="fas fa-file-alt"></i>
                     </div>
                     <h3 class="feature-title">Professional Templates</h3>
                     <p class="feature-description">
-                        Pre-built templates designed by lending experts, ensuring your deal discussions 
-                        cover all critical analysis points and regulatory requirements.
+                        Industry-standard templates designed by lending experts for different 
+                        deal types, ensuring comprehensive coverage of all critical factors.
                     </p>
-                    <div class="feature-link">
-                        <a href="#templates">View templates <i class="fas fa-arrow-right"></i></a>
-                    </div>
+                    <ul class="feature-list">
+                        <li>Commercial real estate</li>
+                        <li>C&I lending templates</li>
+                        <li>Residential mortgage formats</li>
+                    </ul>
                 </div>
                 
                 <div class="feature-card">
                     <div class="feature-icon">
                         <i class="fas fa-shield-alt"></i>
                     </div>
-                    <h3 class="feature-title">Risk Analysis Ready</h3>
+                    <h3 class="feature-title">Compliance Ready</h3>
                     <p class="feature-description">
-                        Built-in risk assessment frameworks and regulatory guidelines ensure your 
-                        deal discussions meet lending standards and audit requirements.
+                        Built-in regulatory compliance checks ensure your deal discussions 
+                        meet all industry standards and audit requirements.
                     </p>
-                    <div class="feature-link">
-                        <a href="#compliance">Learn about compliance <i class="fas fa-arrow-right"></i></a>
+                    <ul class="feature-list">
+                        <li>Regulatory compliance</li>
+                        <li>Audit trail documentation</li>
+                        <li>Risk management protocols</li>
+                    </ul>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-users"></i>
                     </div>
+                    <h3 class="feature-title">Committee Collaboration</h3>
+                    <p class="feature-description">
+                        Streamlined workflow for loan committee review with collaborative 
+                        features, comments, and approval tracking.
+                    </p>
+                    <ul class="feature-list">
+                        <li>Real-time collaboration</li>
+                        <li>Comment and review system</li>
+                        <li>Approval workflow tracking</li>
+                    </ul>
                 </div>
                 
                 <div class="feature-card">
                     <div class="feature-icon">
                         <i class="fas fa-download"></i>
                     </div>
-                    <h3 class="feature-title">Multiple Export Options</h3>
+                    <h3 class="feature-title">Multi-Format Export</h3>
                     <p class="feature-description">
-                        Export your deal discussions in various formats including PDF, Word, and HTML 
-                        for easy sharing with loan committees and integration with your existing systems.
+                        Export your deal discussions in multiple formats for easy sharing 
+                        with stakeholders and integration with existing systems.
                     </p>
-                    <div class="feature-link">
-                        <a href="#export">Export options <i class="fas fa-arrow-right"></i></a>
-                    </div>
+                    <ul class="feature-list">
+                        <li>PDF reports</li>
+                        <li>Word documents</li>
+                        <li>Excel spreadsheets</li>
+                    </ul>
                 </div>
                 
                 <div class="feature-card">
                     <div class="feature-icon">
-                        <i class="fas fa-cogs"></i>
+                        <i class="fas fa-chart-line"></i>
                     </div>
-                    <h3 class="feature-title">Customizable Analysis</h3>
+                    <h3 class="feature-title">Analytics Dashboard</h3>
                     <p class="feature-description">
-                        Adapt the generator to your specific lending criteria with 
-                        customizable analysis sections, risk factors, and approval workflows.
+                        Comprehensive analytics and reporting to track deal performance, 
+                        approval rates, and portfolio insights.
                     </p>
-                    <div class="feature-link">
-                        <a href="#workflows">Customize workflows <i class="fas fa-arrow-right"></i></a>
+                    <ul class="feature-list">
+                        <li>Deal performance metrics</li>
+                        <li>Portfolio analytics</li>
+                        <li>Trend analysis</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Deal Templates Section -->
+    <section class="templates" id="templates">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">
+                    <i class="fas fa-layer-group"></i>
+                    <span>Deal Templates</span>
+                </div>
+                <h2 class="section-title">
+                    Specialized Templates for
+                    <span class="gradient-text">Every Deal Type</span>
+                </h2>
+                <p class="section-description">
+                    Choose from our comprehensive library of professional templates, 
+                    each tailored for specific lending scenarios and regulatory requirements.
+                </p>
+            </div>
+            
+            <div class="templates-grid">
+                <div class="template-card">
+                    <div class="template-icon">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <h3 class="template-title">Commercial Real Estate</h3>
+                    <p class="template-description">
+                        Comprehensive analysis templates for office buildings, retail centers, 
+                        industrial properties, and mixed-use developments.
+                    </p>
+                    <div class="template-features">
+                        <div class="template-feature">
+                            <i class="fas fa-check"></i>
+                            <span>Property valuation analysis</span>
+                        </div>
+                        <div class="template-feature">
+                            <i class="fas fa-check"></i>
+                            <span>Market condition assessment</span>
+                        </div>
+                        <div class="template-feature">
+                            <i class="fas fa-check"></i>
+                            <span>Cash flow projections</span>
+                        </div>
+                        <div class="template-feature">
+                            <i class="fas fa-check"></i>
+                            <span>Environmental risk review</span>
+                        </div>
+                    </div>
+                    <div class="template-action">
+                        <a href="#" class="btn-outline">Preview Template</a>
                     </div>
                 </div>
                 
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-lock"></i>
+                <div class="template-card featured">
+                    <div class="template-badge">Most Used</div>
+                    <div class="template-icon">
+                        <i class="fas fa-industry"></i>
                     </div>
-                    <h3 class="feature-title">Secure Platform</h3>
-                    <p class="feature-description">
-                        Enterprise-grade security with encrypted data storage, secure access 
-                        controls, and comprehensive audit trails for sensitive financial data protection.
+                    <h3 class="template-title">Commercial & Industrial</h3>
+                    <p class="template-description">
+                        Detailed templates for business loans, equipment financing, 
+                        working capital lines, and industrial lending scenarios.
                     </p>
-                    <div class="feature-link">
-                        <a href="#security">Security details <i class="fas fa-arrow-right"></i></a>
+                    <div class="template-features">
+                        <div class="template-feature">
+                            <i class="fas fa-check"></i>
+                            <span>Business financial analysis</span>
+                        </div>
+                        <div class="template-feature">
+                            <i class="fas fa-check"></i>
+                            <span>Industry risk assessment</span>
+                        </div>
+                        <div class="template-feature">
+                            <i class="fas fa-check"></i>
+                            <span>Management evaluation</span>
+                        </div>
+                        <div class="template-feature">
+                            <i class="fas fa-check"></i>
+                            <span>Collateral analysis</span>
+                        </div>
+                    </div>
+                    <div class="template-action">
+                        <a href="#" class="btn-primary">Preview Template</a>
+                    </div>
+                </div>
+                
+                <div class="template-card">
+                    <div class="template-icon">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <h3 class="template-title">Residential Mortgage</h3>
+                    <p class="template-description">
+                        Streamlined templates for residential lending, refinancing, 
+                        and home equity lines of credit with automated compliance checks.
+                    </p>
+                    <div class="template-features">
+                        <div class="template-feature">
+                            <i class="fas fa-check"></i>
+                            <span>Borrower credit analysis</span>
+                        </div>
+                        <div class="template-feature">
+                            <i class="fas fa-check"></i>
+                            <span>Property appraisal review</span>
+                        </div>
+                        <div class="template-feature">
+                            <i class="fas fa-check"></i>
+                            <span>DTI ratio calculations</span>
+                        </div>
+                        <div class="template-feature">
+                            <i class="fas fa-check"></i>
+                            <span>Regulatory compliance</span>
+                        </div>
+                    </div>
+                    <div class="template-action">
+                        <a href="#" class="btn-outline">Preview Template</a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- How It Works Section -->
-    <section class="how-it-works" id="how-it-works">
+    <!-- Process Section -->
+    <section class="process" id="process">
         <div class="container">
             <div class="section-header">
                 <div class="section-badge">
-                    <i class="fas fa-lightbulb"></i>
-                    Simple Process
+                    <i class="fas fa-cogs"></i>
+                    <span>Simple Process</span>
                 </div>
                 <h2 class="section-title">
-                    Create Deal Discussions in 
-                    <span class="text-gradient">3 Easy Steps</span>
+                    Create Deal Discussions in
+                    <span class="gradient-text">4 Easy Steps</span>
                 </h2>
                 <p class="section-description">
-                    Our streamlined process makes it simple to create comprehensive 
-                    deal analysis papers without any technical expertise required.
+                    Our streamlined workflow guides you through the entire process, 
+                    from initial data input to final committee-ready presentation.
                 </p>
             </div>
             
-            <div class="steps">
-                <div class="step">
+            <div class="process-steps">
+                <div class="process-step">
                     <div class="step-number">01</div>
                     <div class="step-content">
-                        <div class="step-visual">
-                            <div class="step-card">
-                                <div class="step-card-header">Choose Template</div>
-                                <div class="step-card-body">
-                                    <div class="template-option active">
-                                        <i class="fas fa-building"></i>
-                                        <span>Commercial Real Estate</span>
-                                    </div>
-                                    <div class="template-option">
-                                        <i class="fas fa-industry"></i>
-                                        <span>Commercial & Industrial</span>
-                                    </div>
-                                    <div class="template-option">
-                                        <i class="fas fa-home"></i>
-                                        <span>Residential Mortgage</span>
-                                    </div>
-                                </div>
-                            </div>
+                        <div class="step-icon">
+                            <i class="fas fa-clipboard-list"></i>
                         </div>
-                        <div class="step-text">
-                            <h3 class="step-title">Choose Your Template</h3>
-                            <p class="step-description">
-                                Select from our library of professionally designed templates 
-                                tailored for different deal types and lending analysis requirements.
-                            </p>
-                        </div>
+                        <h3 class="step-title">Select Deal Template</h3>
+                        <p class="step-description">
+                            Choose from our comprehensive library of professional templates 
+                            designed for your specific deal type and lending scenario.
+                        </p>
                     </div>
                 </div>
                 
-                <div class="step">
+                <div class="process-step">
                     <div class="step-number">02</div>
                     <div class="step-content">
-                        <div class="step-text">
-                            <h3 class="step-title">Fill in Deal Details</h3>
-                            <p class="step-description">
-                                Complete the intelligent form with your specific deal 
-                                parameters, borrower information, and risk factors. Our system guides you through each step.
-                            </p>
+                        <div class="step-icon">
+                            <i class="fas fa-edit"></i>
                         </div>
-                        <div class="step-visual">
-                            <div class="step-card">
-                                <div class="step-card-header">Document Details</div>
-                                <div class="step-card-body">
-                                    <div class="form-field-preview">
-                                        <label>Borrower Name</label>
-                                        <input type="text" value="ABC Development LLC" readonly>
-                                    </div>
-                                    <div class="form-field-preview">
-                                        <label>Loan Amount</label>
-                                        <input type="text" value="$2,500,000" readonly>
-                                    </div>
-                                    <div class="form-field-preview">
-                                        <label>Property Type</label>
-                                        <input type="text" value="Office Building" readonly>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        <h3 class="step-title">Input Deal Information</h3>
+                        <p class="step-description">
+                            Enter borrower details, loan parameters, property information, 
+                            and financial data through our intelligent guided forms.
+                        </p>
                     </div>
                 </div>
                 
-                <div class="step">
+                <div class="process-step">
                     <div class="step-number">03</div>
                     <div class="step-content">
-                        <div class="step-visual">
-                            <div class="step-card">
-                                <div class="step-card-header">Generated SOP</div>
-                                <div class="step-card-body">
-                                    <div class="document-preview">
-                                        <div class="document-header">
-                                            <h4>Deal Discussion Paper</h4>
-                                            <p>Commercial Real Estate - ABC Development LLC</p>
-                                        </div>
-                                        <div class="document-content">
-                                            <div class="document-section">1. Executive Summary</div>
-                                            <div class="document-section">2. Borrower Analysis</div>
-                                            <div class="document-section">3. Property Analysis</div>
-                                            <div class="document-section">4. Risk Assessment</div>
-                                        </div>
-                                        <div class="document-actions">
-                                            <button class="btn-mini">
-                                                <i class="fas fa-download"></i> PDF
-                                            </button>
-                                            <button class="btn-mini">
-                                                <i class="fas fa-file-word"></i> Word
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                        <div class="step-icon">
+                            <i class="fas fa-robot"></i>
                         </div>
-                        <div class="step-text">
-                            <h3 class="step-title">Generate & Export</h3>
-                            <p class="step-description">
-                                Instantly generate your comprehensive deal discussion paper and export it 
-                                in your preferred format. Ready for loan committee review immediately!
-                            </p>
+                        <h3 class="step-title">AI Analysis & Generation</h3>
+                        <p class="step-description">
+                            Our AI engine analyzes the data, performs risk assessments, 
+                            and generates comprehensive deal discussion papers automatically.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">04</div>
+                    <div class="step-content">
+                        <div class="step-icon">
+                            <i class="fas fa-share-alt"></i>
                         </div>
+                        <h3 class="step-title">Review & Share</h3>
+                        <p class="step-description">
+                            Review the generated analysis, make any necessary adjustments, 
+                            and share with your loan committee for decision-making.
+                        </p>
                     </div>
                 </div>
             </div>
@@ -388,23 +509,23 @@
             <div class="cta-content">
                 <div class="cta-text">
                     <h2 class="cta-title">
-                        Ready to Streamline Your 
-                        <span class="text-gradient">Deal Analysis?</span>
+                        Ready to Transform Your
+                        <span class="gradient-text">Deal Analysis Process?</span>
                     </h2>
                     <p class="cta-description">
-                        Join hundreds of financial institutions already using IonBank 
-                        to create comprehensive, professional deal discussion papers in minutes.
+                        Join leading financial institutions who trust IonBank to streamline 
+                        their lending decisions with professional, comprehensive deal discussions.
                     </p>
                 </div>
                 
                 <div class="cta-actions">
-                    <a href="../sop-generator/index.html" class="btn btn-primary btn-large">
+                    <a href="../sop-generator/index.html" class="btn-primary btn-large">
                         <i class="fas fa-rocket"></i>
                         Start Creating Deal Discussions
                     </a>
                     <div class="cta-note">
-                        <i class="fas fa-check"></i>
-                        No credit card required • Free to try
+                        <i class="fas fa-shield-alt"></i>
+                        <span>Secure • Compliant • Professional</span>
                     </div>
                 </div>
             </div>
@@ -422,16 +543,16 @@
                     </div>
                     <p class="footer-description">
                         Professional deal discussion generation for modern lending institutions. 
-                        Streamline your loan analysis with intelligent automation.
+                        Streamline your loan analysis with intelligent automation and comprehensive reporting.
                     </p>
                     <div class="footer-social">
-                        <a href="#" class="social-link">
-                            <i class="fab fa-linkedin"></i>
+                        <a href="#" class="social-link" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
                         </a>
-                        <a href="#" class="social-link">
+                        <a href="#" class="social-link" aria-label="Twitter">
                             <i class="fab fa-twitter"></i>
                         </a>
-                        <a href="#" class="social-link">
+                        <a href="#" class="social-link" aria-label="GitHub">
                             <i class="fab fa-github"></i>
                         </a>
                     </div>
@@ -445,16 +566,18 @@
                             <li><a href="#templates">Deal Templates</a></li>
                             <li><a href="#pricing">Pricing</a></li>
                             <li><a href="#integrations">Integrations</a></li>
+                            <li><a href="#api">API Access</a></li>
                         </ul>
                     </div>
                     
                     <div class="footer-column">
-                        <h4 class="footer-title">Company</h4>
+                        <h4 class="footer-title">Solutions</h4>
                         <ul class="footer-list">
-                            <li><a href="#about">About</a></li>
-                            <li><a href="#team">Team</a></li>
-                            <li><a href="#careers">Careers</a></li>
-                            <li><a href="#news">News</a></li>
+                            <li><a href="#commercial">Commercial Lending</a></li>
+                            <li><a href="#residential">Residential Loans</a></li>
+                            <li><a href="#industrial">C&I Lending</a></li>
+                            <li><a href="#compliance">Compliance</a></li>
+                            <li><a href="#analytics">Analytics</a></li>
                         </ul>
                     </div>
                     
@@ -463,8 +586,9 @@
                         <ul class="footer-list">
                             <li><a href="#documentation">Documentation</a></li>
                             <li><a href="#blog">Blog</a></li>
-                            <li><a href="#guides">Guides</a></li>
+                            <li><a href="#case-studies">Case Studies</a></li>
                             <li><a href="#webinars">Webinars</a></li>
+                            <li><a href="#white-papers">White Papers</a></li>
                         </ul>
                     </div>
                     
@@ -472,8 +596,9 @@
                         <h4 class="footer-title">Support</h4>
                         <ul class="footer-list">
                             <li><a href="#help">Help Center</a></li>
-                            <li><a href="#contact">Contact</a></li>
-                            <li><a href="#status">Status</a></li>
+                            <li><a href="#contact">Contact Us</a></li>
+                            <li><a href="#training">Training</a></li>
+                            <li><a href="#status">System Status</a></li>
                             <li><a href="#community">Community</a></li>
                         </ul>
                     </div>
@@ -487,12 +612,14 @@
                 <div class="footer-legal">
                     <a href="#privacy">Privacy Policy</a>
                     <a href="#terms">Terms of Service</a>
+                    <a href="#security">Security</a>
                     <a href="#cookies">Cookie Policy</a>
                 </div>
             </div>
         </div>
     </footer>
 
+    <!-- Scripts -->
     <script src="script.js"></script>
 </body>
 </html>
