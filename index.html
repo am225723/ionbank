@@ -3,567 +3,496 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IonBank - SOP Document Generator</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Inter', sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: #333;
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        header {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            padding: 1rem 0;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-        }
-
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            color: white;
-            font-weight: 700;
-            font-size: 1.5rem;
-        }
-
-        .logo img {
-            height: 50px;
-            width: auto;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-            list-style: none;
-        }
-
-        .nav-links a {
-            color: white;
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s ease;
-        }
-
-        .nav-links a:hover {
-            color: #f59e0b;
-        }
-
-        .hero {
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: white;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><defs><radialGradient id="a" cx="50%" cy="50%"><stop offset="0%" stop-color="%23ffffff" stop-opacity="0.1"/><stop offset="100%" stop-color="%23ffffff" stop-opacity="0"/></radialGradient></defs><circle cx="200" cy="200" r="100" fill="url(%23a)"/><circle cx="800" cy="300" r="150" fill="url(%23a)"/><circle cx="400" cy="700" r="120" fill="url(%23a)"/></svg>');
-            animation: float 20s ease-in-out infinite;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-20px); }
-        }
-
-        .hero-content h1 {
-            font-size: 3.5rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            animation: fadeInUp 1s ease-out;
-        }
-
-        .hero-content p {
-            font-size: 1.5rem;
-            margin-bottom: 2rem;
-            opacity: 0.9;
-            animation: fadeInUp 1s ease-out 0.2s both;
-        }
-
-        .cta-buttons {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            animation: fadeInUp 1s ease-out 0.4s both;
-        }
-
-        .btn {
-            padding: 1rem 2rem;
-            border: none;
-            border-radius: 50px;
-            font-weight: 600;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            cursor: pointer;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .btn-primary {
-            background: linear-gradient(135deg, #1e40af, #3b82f6);
-            color: white;
-            box-shadow: 0 4px 15px rgba(30, 64, 175, 0.4);
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(30, 64, 175, 0.6);
-        }
-
-        .btn-secondary {
-            background: rgba(255, 255, 255, 0.2);
-            color: white;
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            backdrop-filter: blur(10px);
-        }
-
-        .btn-secondary:hover {
-            background: rgba(255, 255, 255, 0.3);
-            transform: translateY(-2px);
-        }
-
-        .features {
-            padding: 5rem 0;
-            background: white;
-        }
-
-        .features h2 {
-            text-align: center;
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 3rem;
-            color: #1e40af;
-        }
-
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .feature-card {
-            background: white;
-            padding: 2rem;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            text-align: center;
-            transition: transform 0.3s ease;
-        }
-
-        .feature-card:hover {
-            transform: translateY(-10px);
-        }
-
-        .feature-icon {
-            font-size: 3rem;
-            color: #3b82f6;
-            margin-bottom: 1rem;
-        }
-
-        .feature-card h3 {
-            font-size: 1.5rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
-            color: #1e40af;
-        }
-
-        .feature-card p {
-            color: #64748b;
-            line-height: 1.6;
-        }
-
-        .demo-section {
-            padding: 5rem 0;
-            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
-        }
-
-        .demo-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
-        }
-
-        .demo-content h2 {
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 1.5rem;
-            color: #1e40af;
-        }
-
-        .demo-content p {
-            font-size: 1.2rem;
-            color: #475569;
-            margin-bottom: 2rem;
-            line-height: 1.7;
-        }
-
-        .demo-features {
-            list-style: none;
-        }
-
-        .demo-features li {
-            padding: 0.5rem 0;
-            color: #334155;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .demo-features li::before {
-            content: '✓';
-            color: #10b981;
-            font-weight: bold;
-        }
-
-        .demo-image {
-            background: white;
-            padding: 2rem;
-            border-radius: 20px;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-            text-align: center;
-        }
-
-        .stats {
-            padding: 5rem 0;
-            background: linear-gradient(135deg, #1e40af, #3b82f6);
-            color: white;
-        }
-
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
-            text-align: center;
-        }
-
-        .stat-item h3 {
-            font-size: 3rem;
-            font-weight: 700;
-            margin-bottom: 0.5rem;
-        }
-
-        .stat-item p {
-            font-size: 1.2rem;
-            opacity: 0.9;
-        }
-
-        footer {
-            background: #1e293b;
-            color: white;
-            padding: 3rem 0;
-            text-align: center;
-        }
-
-        .footer-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-bottom: 2rem;
-        }
-
-        .footer-section h3 {
-            font-size: 1.5rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
-            color: #f59e0b;
-        }
-
-        .footer-section ul {
-            list-style: none;
-        }
-
-        .footer-section ul li {
-            margin-bottom: 0.5rem;
-        }
-
-        .footer-section ul li a {
-            color: #94a3b8;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        .footer-section ul li a:hover {
-            color: white;
-        }
-
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-            margin-top: 2rem;
-        }
-
-        .social-links a {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 50px;
-            height: 50px;
-            background: #334155;
-            color: white;
-            border-radius: 50%;
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-
-        .social-links a:hover {
-            background: #3b82f6;
-            transform: translateY(-2px);
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @media (max-width: 768px) {
-            .hero-content h1 {
-                font-size: 2.5rem;
-            }
-            
-            .hero-content p {
-                font-size: 1.2rem;
-            }
-            
-            .cta-buttons {
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            .demo-container {
-                grid-template-columns: 1fr;
-            }
-            
-            .nav-links {
-                display: none;
-            }
-        }
-    </style>
+    <title>IonBank - Professional Deal Discussion Generator</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
 <script src="https://sites.super.myninja.ai/_assets/ninja-daytona-script.js"></script>
 </head>
 <body>
-    <header>
-        <nav class="container">
-            <div class="logo">
-                <img src="IonBankLogo.png" alt="IonBank" />
-                <span>IonBank</span>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav container">
+            <div class="nav-brand">
+                <img src="../IonBankLogo.png" alt="IonBank" class="nav-logo">
+                <span class="nav-brand-text">IonBank</span>
             </div>
-            <ul class="nav-links">
-                <li><a href="#features">Features</a></li>
-                <li><a href="#demo">Demo</a></li>
-                <li><a href="#docs">Documentation</a></li>
-                <li><a href="#github">GitHub</a></li>
-            </ul>
+            
+            <div class="nav-menu" id="nav-menu">
+                <ul class="nav-list">
+                    <li class="nav-item">
+                        <a href="#home" class="nav-link active">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#features" class="nav-link">Features</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#how-it-works" class="nav-link">How It Works</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#templates" class="nav-link">Deal Templates</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#about" class="nav-link">About</a>
+                    </li>
+                </ul>
+                
+                <div class="nav-actions">
+                    <a href="../sop-generator/index.html" class="btn btn-primary">
+                        <i class="fas fa-rocket"></i>
+                        Get Started
+                    </a>
+                </div>
+            </div>
+            
+            <div class="nav-toggle" id="nav-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
         </nav>
     </header>
 
-    <section class="hero">
-        <div class="hero-content">
-            <h1>IonBank SOP Generator</h1>
-            <p>Professional SOP documents in minutes, not hours</p>
-            <div class="cta-buttons">
-                <a href="sop-generator/index.html" class="btn btn-primary">
-                    <i class="fas fa-rocket"></i>
-                    Get Started
-                </a>
-                <a href="https://github.com/am225723/ionbank" class="btn btn-secondary">
-                    <i class="fab fa-github"></i>
-                    View on GitHub
-                </a>
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-background">
+            <div class="hero-pattern"></div>
+        </div>
+        
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <div class="hero-badge">
+                        <i class="fas fa-sparkles"></i>
+                        Professional Deal Analysis
+                    </div>
+                    
+                    <h1 class="hero-title">
+                        Create Professional 
+                        <span class="text-gradient">Deal Discussions</span>
+                        in Minutes
+                    </h1>
+                    
+                    <p class="hero-description">
+                        Streamline your lending operations with our intelligent Deal Discussions generator. 
+                        Create comprehensive, professional deal analysis papers with ease and confidence.
+                    </p>
+                    
+                    <div class="hero-actions">
+                        <a href="../sop-generator/index.html" class="btn btn-primary btn-large">
+                            <i class="fas fa-rocket"></i>
+                            Start Creating Deal Discussions
+                        </a>
+                        <a href="#demo" class="btn btn-secondary btn-large">
+                            <i class="fas fa-play"></i>
+                            Watch Demo
+                        </a>
+                    </div>
+                    
+                    <div class="hero-stats">
+                        <div class="stat">
+                            <div class="stat-number">500+</div>
+                            <div class="stat-label">Deal Discussions Created</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">98%</div>
+                            <div class="stat-label">Approval Rate</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">5min</div>
+                            <div class="stat-label">Average Creation Time</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="hero-visual">
+                    <div class="hero-card">
+                        <div class="hero-card-header">
+                            <div class="hero-card-dots">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                            <div class="hero-card-title">Deal Discussion Generator</div>
+                        </div>
+                        <div class="hero-card-content">
+                            <div class="form-preview">
+                                <div class="form-field">
+                                    <label>Deal Type</label>
+                                    <div class="input-preview">Commercial Real Estate</div>
+                                </div>
+                                <div class="form-field">
+                                    <label>Loan Amount</label>
+                                    <div class="input-preview">$2,500,000</div>
+                                </div>
+                                <div class="form-field">
+                                    <label>Borrower Name</label>
+                                    <div class="input-preview">ABC Development LLC</div>
+                                </div>
+                                <div class="form-actions">
+                                    <div class="btn-preview btn-preview-primary">Generate Deal Discussion</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="floating-elements">
+                        <div class="floating-icon floating-icon-1">
+                            <i class="fas fa-file-alt"></i>
+                        </div>
+                        <div class="floating-icon floating-icon-2">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <div class="floating-icon floating-icon-3">
+                            <i class="fas fa-download"></i>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
+    <!-- Features Section -->
     <section class="features" id="features">
         <div class="container">
-            <h2>Powerful Features</h2>
+            <div class="section-header">
+                <div class="section-badge">
+                    <i class="fas fa-star"></i>
+                    Key Features
+                </div>
+                <h2 class="section-title">
+                    Everything You Need for 
+                    <span class="text-gradient">Professional Deal Discussions</span>
+                </h2>
+                <p class="section-description">
+                    Our comprehensive platform provides all the tools and templates you need 
+                    to create thorough, professional deal analysis papers efficiently.
+                </p>
+            </div>
+            
             <div class="features-grid">
                 <div class="feature-card">
                     <div class="feature-icon">
-                        <i class="fas fa-file-alt"></i>
+                        <i class="fas fa-magic"></i>
                     </div>
-                    <h3>Smart Templates</h3>
-                    <p>Professional SOP templates with intelligent form validation and auto-completion</p>
+                    <h3 class="feature-title">Automated Generation</h3>
+                    <p class="feature-description">
+                        Intelligent form-based system that automatically generates comprehensive 
+                        deal discussion papers based on your loan parameters and risk analysis requirements.
+                    </p>
+                    <div class="feature-link">
+                        <a href="#learn-more">Learn more <i class="fas fa-arrow-right"></i></a>
+                    </div>
                 </div>
+                
                 <div class="feature-card">
                     <div class="feature-icon">
-                        <i class="fas fa-camera"></i>
+                        <i class="fas fa-file-contract"></i>
                     </div>
-                    <h3>Photo Integration</h3>
-                    <p>Seamlessly integrate property photos and documentation into your SOP documents</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-download"></i>
+                    <h3 class="feature-title">Professional Templates</h3>
+                    <p class="feature-description">
+                        Pre-built templates designed by lending experts, ensuring your deal discussions 
+                        cover all critical analysis points and regulatory requirements.
+                    </p>
+                    <div class="feature-link">
+                        <a href="#templates">View templates <i class="fas fa-arrow-right"></i></a>
                     </div>
-                    <h3>PDF Export</h3>
-                    <p>Generate high-quality PDF documents with professional formatting and branding</p>
                 </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-mobile-alt"></i>
-                    </div>
-                    <h3>Mobile Responsive</h3>
-                    <p>Create SOP documents on-the-go with our mobile-optimized interface</p>
-                </div>
+                
                 <div class="feature-card">
                     <div class="feature-icon">
                         <i class="fas fa-shield-alt"></i>
                     </div>
-                    <h3>Secure & Private</h3>
-                    <p>All data processed locally with enterprise-grade security standards</p>
+                    <h3 class="feature-title">Risk Analysis Ready</h3>
+                    <p class="feature-description">
+                        Built-in risk assessment frameworks and regulatory guidelines ensure your 
+                        deal discussions meet lending standards and audit requirements.
+                    </p>
+                    <div class="feature-link">
+                        <a href="#compliance">Learn about compliance <i class="fas fa-arrow-right"></i></a>
+                    </div>
                 </div>
+                
                 <div class="feature-card">
                     <div class="feature-icon">
-                        <i class="fas fa-clock"></i>
+                        <i class="fas fa-download"></i>
                     </div>
-                    <h3>Time Saving</h3>
-                    <p>Reduce SOP creation time from hours to minutes with automated workflows</p>
+                    <h3 class="feature-title">Multiple Export Options</h3>
+                    <p class="feature-description">
+                        Export your deal discussions in various formats including PDF, Word, and HTML 
+                        for easy sharing with loan committees and integration with your existing systems.
+                    </p>
+                    <div class="feature-link">
+                        <a href="#export">Export options <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <h3 class="feature-title">Customizable Analysis</h3>
+                    <p class="feature-description">
+                        Adapt the generator to your specific lending criteria with 
+                        customizable analysis sections, risk factors, and approval workflows.
+                    </p>
+                    <div class="feature-link">
+                        <a href="#workflows">Customize workflows <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <h3 class="feature-title">Secure Platform</h3>
+                    <p class="feature-description">
+                        Enterprise-grade security with encrypted data storage, secure access 
+                        controls, and comprehensive audit trails for sensitive financial data protection.
+                    </p>
+                    <div class="feature-link">
+                        <a href="#security">Security details <i class="fas fa-arrow-right"></i></a>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="demo-section" id="demo">
+    <!-- How It Works Section -->
+    <section class="how-it-works" id="how-it-works">
         <div class="container">
-            <div class="demo-container">
-                <div class="demo-content">
-                    <h2>See It In Action</h2>
-                    <p>Experience how IonBank SOP Generator transforms your lending workflow with intelligent automation and professional design.</p>
-                    <ul class="demo-features">
-                        <li>Multi-step form with validation</li>
-                        <li>Drag-and-drop photo upload</li>
-                        <li>Real-time preview</li>
-                        <li>Instant PDF generation</li>
-                        <li>Professional templates</li>
-                    </ul>
-                    <a href="sop-generator/index.html" class="btn btn-primary">
-                        <i class="fas fa-play"></i>
-                        Try Demo
+            <div class="section-header">
+                <div class="section-badge">
+                    <i class="fas fa-lightbulb"></i>
+                    Simple Process
+                </div>
+                <h2 class="section-title">
+                    Create Deal Discussions in 
+                    <span class="text-gradient">3 Easy Steps</span>
+                </h2>
+                <p class="section-description">
+                    Our streamlined process makes it simple to create comprehensive 
+                    deal analysis papers without any technical expertise required.
+                </p>
+            </div>
+            
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">01</div>
+                    <div class="step-content">
+                        <div class="step-visual">
+                            <div class="step-card">
+                                <div class="step-card-header">Choose Template</div>
+                                <div class="step-card-body">
+                                    <div class="template-option active">
+                                        <i class="fas fa-building"></i>
+                                        <span>Commercial Real Estate</span>
+                                    </div>
+                                    <div class="template-option">
+                                        <i class="fas fa-industry"></i>
+                                        <span>Commercial & Industrial</span>
+                                    </div>
+                                    <div class="template-option">
+                                        <i class="fas fa-home"></i>
+                                        <span>Residential Mortgage</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="step-text">
+                            <h3 class="step-title">Choose Your Template</h3>
+                            <p class="step-description">
+                                Select from our library of professionally designed templates 
+                                tailored for different deal types and lending analysis requirements.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">02</div>
+                    <div class="step-content">
+                        <div class="step-text">
+                            <h3 class="step-title">Fill in Deal Details</h3>
+                            <p class="step-description">
+                                Complete the intelligent form with your specific deal 
+                                parameters, borrower information, and risk factors. Our system guides you through each step.
+                            </p>
+                        </div>
+                        <div class="step-visual">
+                            <div class="step-card">
+                                <div class="step-card-header">Document Details</div>
+                                <div class="step-card-body">
+                                    <div class="form-field-preview">
+                                        <label>Borrower Name</label>
+                                        <input type="text" value="ABC Development LLC" readonly>
+                                    </div>
+                                    <div class="form-field-preview">
+                                        <label>Loan Amount</label>
+                                        <input type="text" value="$2,500,000" readonly>
+                                    </div>
+                                    <div class="form-field-preview">
+                                        <label>Property Type</label>
+                                        <input type="text" value="Office Building" readonly>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">03</div>
+                    <div class="step-content">
+                        <div class="step-visual">
+                            <div class="step-card">
+                                <div class="step-card-header">Generated SOP</div>
+                                <div class="step-card-body">
+                                    <div class="document-preview">
+                                        <div class="document-header">
+                                            <h4>Deal Discussion Paper</h4>
+                                            <p>Commercial Real Estate - ABC Development LLC</p>
+                                        </div>
+                                        <div class="document-content">
+                                            <div class="document-section">1. Executive Summary</div>
+                                            <div class="document-section">2. Borrower Analysis</div>
+                                            <div class="document-section">3. Property Analysis</div>
+                                            <div class="document-section">4. Risk Assessment</div>
+                                        </div>
+                                        <div class="document-actions">
+                                            <button class="btn-mini">
+                                                <i class="fas fa-download"></i> PDF
+                                            </button>
+                                            <button class="btn-mini">
+                                                <i class="fas fa-file-word"></i> Word
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="step-text">
+                            <h3 class="step-title">Generate & Export</h3>
+                            <p class="step-description">
+                                Instantly generate your comprehensive deal discussion paper and export it 
+                                in your preferred format. Ready for loan committee review immediately!
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <div class="cta-content">
+                <div class="cta-text">
+                    <h2 class="cta-title">
+                        Ready to Streamline Your 
+                        <span class="text-gradient">Deal Analysis?</span>
+                    </h2>
+                    <p class="cta-description">
+                        Join hundreds of financial institutions already using IonBank 
+                        to create comprehensive, professional deal discussion papers in minutes.
+                    </p>
+                </div>
+                
+                <div class="cta-actions">
+                    <a href="../sop-generator/index.html" class="btn btn-primary btn-large">
+                        <i class="fas fa-rocket"></i>
+                        Start Creating Deal Discussions
                     </a>
-                </div>
-                <div class="demo-image">
-                    <img src="IonBankLogo.png" alt="IonBank Demo" style="max-width: 100%; height: auto; border-radius: 10px;" />
-                    <p style="margin-top: 1rem; color: #64748b;">Professional SOP documents with your branding</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="stats">
-        <div class="container">
-            <div class="stats-grid">
-                <div class="stat-item">
-                    <h3>500+</h3>
-                    <p>Documents Generated</p>
-                </div>
-                <div class="stat-item">
-                    <h3>95%</h3>
-                    <p>Time Saved</p>
-                </div>
-                <div class="stat-item">
-                    <h3>100%</h3>
-                    <p>Accuracy Rate</p>
-                </div>
-                <div class="stat-item">
-                    <h3>24/7</h3>
-                    <p>Availability</p>
+                    <div class="cta-note">
+                        <i class="fas fa-check"></i>
+                        No credit card required • Free to try
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer>
+    <!-- Footer -->
+    <footer class="footer">
         <div class="container">
             <div class="footer-content">
-                <div class="footer-section">
-                    <h3>Product</h3>
-                    <ul>
-                        <li><a href="#features">Features</a></li>
-                        <li><a href="#demo">Demo</a></li>
-                        <li><a href="sop-generator/index.html">Get Started</a></li>
-                    </ul>
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <img src="../IonBankLogo.png" alt="IonBank" class="footer-logo-img">
+                        <span class="footer-brand-text">IonBank</span>
+                    </div>
+                    <p class="footer-description">
+                        Professional deal discussion generation for modern lending institutions. 
+                        Streamline your loan analysis with intelligent automation.
+                    </p>
+                    <div class="footer-social">
+                        <a href="#" class="social-link">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
                 </div>
-                <div class="footer-section">
-                    <h3>Resources</h3>
-                    <ul>
-                        <li><a href="sop-generator/README.md">Documentation</a></li>
-                        <li><a href="https://github.com/am225723/ionbank">GitHub</a></li>
-                        <li><a href="#support">Support</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h3>Company</h3>
-                    <ul>
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                        <li><a href="#privacy">Privacy</a></li>
-                    </ul>
+                
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4 class="footer-title">Product</h4>
+                        <ul class="footer-list">
+                            <li><a href="#features">Features</a></li>
+                            <li><a href="#templates">Deal Templates</a></li>
+                            <li><a href="#pricing">Pricing</a></li>
+                            <li><a href="#integrations">Integrations</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h4 class="footer-title">Company</h4>
+                        <ul class="footer-list">
+                            <li><a href="#about">About</a></li>
+                            <li><a href="#team">Team</a></li>
+                            <li><a href="#careers">Careers</a></li>
+                            <li><a href="#news">News</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h4 class="footer-title">Resources</h4>
+                        <ul class="footer-list">
+                            <li><a href="#documentation">Documentation</a></li>
+                            <li><a href="#blog">Blog</a></li>
+                            <li><a href="#guides">Guides</a></li>
+                            <li><a href="#webinars">Webinars</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h4 class="footer-title">Support</h4>
+                        <ul class="footer-list">
+                            <li><a href="#help">Help Center</a></li>
+                            <li><a href="#contact">Contact</a></li>
+                            <li><a href="#status">Status</a></li>
+                            <li><a href="#community">Community</a></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
-            <div class="social-links">
-                <a href="https://github.com/am225723/ionbank" aria-label="GitHub">
-                    <i class="fab fa-github"></i>
-                </a>
-                <a href="#" aria-label="Twitter">
-                    <i class="fab fa-twitter"></i>
-                </a>
-                <a href="#" aria-label="LinkedIn">
-                    <i class="fab fa-linkedin"></i>
-                </a>
-                <a href="#" aria-label="Email">
-                    <i class="fas fa-envelope"></i>
-                </a>
+            
+            <div class="footer-bottom">
+                <div class="footer-copyright">
+                    <p>&copy; 2025 IonBank. All rights reserved.</p>
+                </div>
+                <div class="footer-legal">
+                    <a href="#privacy">Privacy Policy</a>
+                    <a href="#terms">Terms of Service</a>
+                    <a href="#cookies">Cookie Policy</a>
+                </div>
             </div>
-            <p style="margin-top: 2rem; color: #94a3b8;">
-                &copy; 2025 IonBank. All rights reserved. Built with modern web technologies.
-            </p>
         </div>
     </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
